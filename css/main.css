@@ -1,0 +1,19 @@
+
+
+
+@keyframes pink-green {
+    from {
+        color: #fa10f0;
+    }
+    to {
+        color: #05ef0f;
+    }
+}
+
+#top-header {
+    animation-name: pink-green;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    color: #05ef0f;
+}
