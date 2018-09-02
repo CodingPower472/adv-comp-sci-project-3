@@ -1,6 +1,4 @@
 
-
-
 @keyframes pink-green {
     from {
         color: #fa10f0;
@@ -16,4 +14,5 @@
     animation-direction: alternate;
     animation-iteration-count: infinite;
     color: #05ef0f;
+    font-family: 'Comic Sans MS';
 }
