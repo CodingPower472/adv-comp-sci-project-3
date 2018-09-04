@@ -24,7 +24,7 @@
         </thead>
         <tbody>
             <?php
-            $file = fopen('users.txt', 'a') or die('Unable to open file');
+            $file = fopen('users.txt', 'r') or die('Unable to open file');
             $entries = preg_split('\n', fread($file));
             echo "Test: $entries";
             foreach ($entries as $entry) {
