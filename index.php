@@ -1,8 +1,4 @@
 
-<?php
-    $counter = 0
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,9 +16,29 @@
     <audio autoplay>
         <source src="audio/intro.mp3" type="audio/mpeg">
     </audio>
-    <?php
-        $counter++;
-        echo $counter;
-    ?>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Awesomeness</th>
+        </thead>
+        <tbody>
+            <?php
+            $file = fopen('users.txt', 'a') or die('Unable to open file');
+            $entries = preg_split('\n', fread($file));
+            foreach ($entries as $entry) {
+                $splitted = preg_split(',', $entry);
+                $name = $splitted[0];
+                $email = $splitted[1];
+                $awesomeness = $splitted[2];
+                echo "<tr>";
+                echo "<th>$name</th>";
+                echo "<th>$email</th>";
+                echo "<th>$awesomeness</th>";
+                echo "</tr>";
+            }
+            ?>
+        </tbody>
+    </table>
 </body>
 </html>
