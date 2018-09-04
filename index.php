@@ -21,7 +21,8 @@
         <source src="audio/intro.mp3" type="audio/mpeg">
     </audio>
     <?php
-        $counter++
+        $counter++;
+        echo $counter;
     ?>
 </body>
 </html>
