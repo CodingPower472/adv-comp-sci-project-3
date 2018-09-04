@@ -26,7 +26,7 @@
             <?php
             $file = fopen('users.txt', 'r') or die('Unable to open file');
             $entries = preg_split('\n', fread($file));
-            echo "Test: $entries";
+            echo "Test: " . fread($file);
             foreach ($entries as $entry) {
                 $splitted = preg_split(',', $entry);
                 $name = $splitted[0];
