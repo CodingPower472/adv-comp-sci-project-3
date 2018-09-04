@@ -1,3 +1,8 @@
+
+<?php
+    $counter = 0
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,5 +20,8 @@
     <audio autoplay>
         <source src="audio/intro.mp3" type="audio/mpeg">
     </audio>
+    <?php
+        $counter++
+    ?>
 </body>
 </html>
