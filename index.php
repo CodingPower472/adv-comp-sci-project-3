@@ -9,7 +9,11 @@
     <title>Website</title>
 </head>
 <body>
-    <h1 id="top-header">Welcome to my awesome website</h1>
+    <h1 id="top-header">Welcome to my awesome website
+        <?php if (array_key_exists("name", $_POST)) {
+            echo htmlspecialchars($_POST["name"]);
+        }  ?>
+    </h1>
     <div id="img-container">
         <img src="img/photo.jpeg">
     </div>
@@ -31,7 +35,6 @@
                     awesomeness => 5.0
                 )
                 );
-            echo $entries[0]["name"];
             foreach ($entries as $entry) {
                 $name = $entry["name"];
                 $email = $entry["email"];
@@ -45,5 +48,12 @@
             ?>
         </tbody>
     </table>
+    <form action="/" method="POST">
+        <label>
+            Name: 
+            <input name="name">
+        </label>
+        <input type="submit">
+    </form>
 </body>
 </html>
