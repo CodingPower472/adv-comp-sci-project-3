@@ -11,7 +11,7 @@
 <body>
     <h1 id="top-header">Welcome to my awesome website
         <?php if (array_key_exists("name", $_POST)) {
-            echo htmlspecialchars($_POST["name"]);
+            echo ", " . htmlspecialchars($_POST["name"]);
         }  ?>
     </h1>
     <div id="img-container">
