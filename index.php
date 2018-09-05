@@ -24,9 +24,13 @@
         </thead>
         <tbody>
             <?php
-            $file = fopen('users.txt', 'r') or die('Unable to open file');
-            $entries = preg_split('\n', fread($file));
-            echo "Test: " . fread($file);
+            $entries = array(
+                array(
+                    name => "Luke",
+                    email => "alphawaves@icloud.com",
+                    awesomeness => 5.0
+                )
+                );
             foreach ($entries as $entry) {
                 $splitted = preg_split(',', $entry);
                 $name = $splitted[0];
