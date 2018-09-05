@@ -33,10 +33,9 @@
                 );
             echo $entries[0]["name"];
             foreach ($entries as $entry) {
-                $splitted = preg_split(',', $entry);
-                $name = $splitted[0];
-                $email = $splitted[1];
-                $awesomeness = $splitted[2];
+                $name = $entry["name"];
+                $email = $entry["email"];
+                $awesomeness = $entry["awesomeness"];
                 echo "<tr>";
                 echo "<th>$name</th>";
                 echo "<th>$email</th>";
