@@ -16,3 +16,7 @@
     color: #05ef0f;
     font-family: 'Comic Sans MS';
 }
+
+body {
+    background-image: url('img/photo.jpeg');
+}

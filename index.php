@@ -14,7 +14,7 @@
         }  ?>
     </h1>
     <div id="img-container">
-        <img src="img/photo.jpeg">
+        <!-- <img src="img/photo.jpeg"> -->
     </div>
     <audio autoplay>
         <source src="audio/intro.mp3" type="audio/mpeg">
