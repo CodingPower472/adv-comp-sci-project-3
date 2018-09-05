@@ -31,7 +31,7 @@
                     awesomeness => 5.0
                 )
                 );
-            echo $entries[0];
+            echo $entries[0]["name"];
             foreach ($entries as $entry) {
                 $splitted = preg_split(',', $entry);
                 $name = $splitted[0];
