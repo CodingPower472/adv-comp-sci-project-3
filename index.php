@@ -9,8 +9,7 @@
     <title>Website</title>
 </head>
 <body>
-    <h1 id="top-header">Welcome to my awesome website
-        <?php if (array_key_exists("name", $_POST)) {
+    <h1 id="top-header">Welcome to my awesome website<?php if (array_key_exists("name", $_POST)) {
             echo ", " . htmlspecialchars($_POST["name"]);
         }  ?>
     </h1>
