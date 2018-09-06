@@ -7,6 +7,12 @@ $password = 'lukebousfieldcodingpower$&@sql-_-database';
 $db_name = 'master';
 
 $conn = mysqli_init();
+
+if (mysqli_ping($conn)) {
+    echo 'Ping successful';
+} else {
+    echo 'Ping unsuccessful';
+}
 mysqli_real_connect($conn, $host, $username, $password, $db_name, 1433);
 if (mysqli_connect_errno($conn)) {
     die('Failed to connect to MySQL: ' . mysqli_connect_errno());
