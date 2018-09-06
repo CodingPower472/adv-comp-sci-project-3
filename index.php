@@ -1,4 +1,31 @@
 
+<?php
+
+$host = 'luke-bousfield-database.database.windows.net';
+$username = 'codingpower472@luke-bousfield-database';
+$password = 'lukebousfieldcodingpower$&@sql-_-database';
+$db_name = 'adv-comp-sci-proj-3-users';
+
+$conn = mysqli_init();
+mysqli_real_connect($conn, $host, $username, $password, $db_name, 1433);
+if (mysqli_connect_errno($conn)) {
+    die('Failed to connect to MySQL: ' . mysqli_connect_errno);
+}
+
+if (mysqli_query($conn, '
+CREATE TABLE Users(
+`Id` INT NOT NULL AUTO_INCREMENT ,
+`Name` VARCHAR(200) NOT NULL ,
+`Email` VARCHAR(200) NOT NULL ,
+`Awesomeness` INT NOT NULL ,
+PRIMARY KEY (`Id`)
+);
+')) {
+    printf('Table created\n');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +79,18 @@
             Name: 
             <input name="name">
         </label>
-        <input type="submit">
+        <br>
+        <label>
+            Email:
+            <input name="email">
+        </label>
+        <br>
+        <label>
+            Awesomeness:
+            <input name="awesomeness" type="number">
+        </label>
+        <br>
+        <input type="submit" value="Submit">
     </form>
 </body>
 </html>
