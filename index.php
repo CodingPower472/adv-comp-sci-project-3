@@ -9,7 +9,7 @@ $db_name = 'adv-comp-sci-proj-3-users';
 $conn = mysqli_init();
 mysqli_real_connect($conn, $host, $username, $password, $db_name, 1433);
 if (mysqli_connect_errno($conn)) {
-    die('Failed to connect to MySQL: ' . mysqli_connect_errno);
+    die('Failed to connect to MySQL: ' . mysqli_connect_errno());
 }
 
 if (mysqli_query($conn, '
