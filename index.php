@@ -4,7 +4,7 @@
 $host = 'luke-bousfield-database.database.windows.net';
 $username = 'codingpower472@luke-bousfield-database';
 $password = 'lukebousfieldcodingpower$&@sql-_-database';
-$db_name = 'adv-comp-sci-proj-3-users';
+$db_name = 'master';
 
 $conn = mysqli_init();
 mysqli_real_connect($conn, $host, $username, $password, $db_name, 1433);
@@ -23,6 +23,8 @@ PRIMARY KEY (`Id`)
 ')) {
     printf('Table created\n');
 }
+
+mysqli_close($conn);
 
 ?>
 
