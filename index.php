@@ -18,7 +18,7 @@ if ($conn == false) {
     die(print_r(sqlsrv_errors(), true));
 }
 
-$createTableSQL = "CREATE TABLE [adv-comp-sci].users
+$createTableSQL = "CREATE TABLE dbo.users
 (
     [Id] INT NOT NULL IDENTITY ,
     [Name] VARCHAR(200) NOT NULL ,
