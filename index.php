@@ -4,7 +4,7 @@
 $host = 'tcp:luke-bousfield-database.database.windows.net, 1433';
 $username = 'codingpower472@luke-bousfield-database';
 $password = 'lukebousfieldcodingpower$&@sql-_-database472';
-$db_name = 'master';
+$db_name = 'sql';
 
 $connOps = array(
     "Database" => $db_name,
