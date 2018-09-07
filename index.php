@@ -2,16 +2,16 @@
 <?php
 
 $host = 'luke-bousfield-database.database.windows.net';
-$username = 'codingpower472@luke-bousfield-database';
+$username = 'codingpower472@luke-bousfield-database472';
 $password = 'lukebousfieldcodingpower$&@sql-_-database';
 $db_name = 'master';
 
 $conn = mysqli_init();
 
 if (mysqli_ping($conn)) {
-    echo 'Ping successful';
+    echo 'Ping successful\n';
 } else {
-    echo 'Ping unsuccessful';
+    echo 'Ping unsuccessful\n';
 }
 mysqli_real_connect($conn, $host, $username, $password, $db_name, 1433);
 if (mysqli_connect_errno($conn)) {
