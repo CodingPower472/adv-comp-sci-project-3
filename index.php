@@ -20,10 +20,10 @@ if ($conn == false) {
 
 $createTableSQL = "CREATE TABLE master.users
 (
-    `Id` INT NOT NULL AUTO_INCREMENT ,
-    `Name` VARCHAR(200) NOT NULL ,
-    `Email` VARCHAR(200) NOT NULL ,
-    `Awesomeness` INT NOT NULL ,
+    [Id] INT NOT NULL AUTO_INCREMENT ,
+    [Name] VARCHAR(200) NOT NULL ,
+    [Email] VARCHAR(200) NOT NULL ,
+    [Awesomeness] INT NOT NULL ,
     PRIMARY KEY (`Id`)
 )
 ";
