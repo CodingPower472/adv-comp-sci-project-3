@@ -1,36 +1,39 @@
 
 <?php
 
-$host = 'luke-bousfield-database.database.windows.net';
+$host = 'tcp:luke-bousfield-database.database.windows.net, 1433';
 $username = 'codingpower472@luke-bousfield-database';
 $password = 'lukebousfieldcodingpower$&@sql-_-database472';
 $db_name = 'master';
 
-$conn = mysqli_init();
-
-if (mysqli_ping($conn)) {
-    echo 'Ping successful\n';
-} else {
-    echo 'Ping unsuccessful\n';
-}
-mysqli_real_connect($conn, $host, $username, $password, $db_name);
-if (mysqli_connect_errno($conn)) {
-    die('Failed to connect to MySQL: ' . mysqli_connect_errno());
-}
-
-if (mysqli_query($conn, '
-CREATE TABLE Users(
-`Id` INT NOT NULL AUTO_INCREMENT ,
-`Name` VARCHAR(200) NOT NULL ,
-`Email` VARCHAR(200) NOT NULL ,
-`Awesomeness` INT NOT NULL ,
-PRIMARY KEY (`Id`)
+$connOps = array(
+    "Database" => $db_name,
+    "UID" => $username,
+    "PWD" => $password
 );
-')) {
-    printf('Table created\n');
+
+$conn = sqlsrv_connect($host, $connOps);
+
+if ($conn == false) {
+    die(print_r(sqlsrv_errors(), true));
 }
 
-mysqli_close($conn);
+$createTableSQL = "CREATE TABLE master.users
+(
+    `Id` INT NOT NULL AUTO_INCREMENT ,
+    `Name` VARCHAR(200) NOT NULL ,
+    `Email` VARCHAR(200) NOT NULL ,
+    `Awesomeness` INT NOT NULL ,
+    PRIMARY KEY (`Id`)
+)
+";
+
+$createTable = sqlsrv_query($conn, $createTableSQL);
+if ($createTable == false) {
+    die(print_r(sqlsrv_errors(), true));
+} else {
+    echo "Table created successfully.";
+}
 
 ?>
 
