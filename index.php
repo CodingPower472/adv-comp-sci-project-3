@@ -2,8 +2,8 @@
 <?php
 
 $host = 'luke-bousfield-database.database.windows.net';
-$username = 'codingpower472@luke-bousfield-database472';
-$password = 'lukebousfieldcodingpower$&@sql-_-database';
+$username = 'codingpower472@luke-bousfield-database';
+$password = 'lukebousfieldcodingpower$&@sql-_-database472';
 $db_name = 'master';
 
 $conn = mysqli_init();
