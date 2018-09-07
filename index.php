@@ -24,7 +24,7 @@ $createTableSQL = "CREATE TABLE master.users
     [Name] VARCHAR(200) NOT NULL ,
     [Email] VARCHAR(200) NOT NULL ,
     [Awesomeness] INT NOT NULL ,
-    PRIMARY KEY (`Id`)
+    PRIMARY KEY ([Id])
 )
 ";
 
