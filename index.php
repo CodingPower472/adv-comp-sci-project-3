@@ -4,7 +4,7 @@
 $host = 'tcp:luke-bousfield-database.database.windows.net, 1433';
 $username = 'codingpower472@luke-bousfield-database';
 $password = 'lukebousfieldcodingpower$&@sql-_-database472';
-$db_name = 'sql';
+$db_name = 'adv-comp-sci';
 
 $connOps = array(
     "Database" => $db_name,
@@ -18,7 +18,7 @@ if ($conn == false) {
     die(print_r(sqlsrv_errors(), true));
 }
 
-$createTableSQL = "CREATE TABLE sql.users
+$createTableSQL = "CREATE TABLE [adv-comp-sci].users
 (
     [Id] INT NOT NULL IDENTITY ,
     [Name] VARCHAR(200) NOT NULL ,
