@@ -33,6 +33,7 @@ if ($conn == false) {
     <h1 id="top-header">
     <?php
         $isPost = ($_SERVER['REQUEST_METHOD'] === 'POST');
+        echo $isPost;
         $info = array();
         if (!$isPost) {
             $info = array(
