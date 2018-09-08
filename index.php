@@ -18,23 +18,6 @@ if ($conn == false) {
     die(print_r(sqlsrv_errors(), true));
 }
 
-$createTableSQL = "CREATE TABLE dbo.users
-(
-    [Id] INT NOT NULL IDENTITY ,
-    [Name] VARCHAR(200) NOT NULL ,
-    [Email] VARCHAR(200) NOT NULL ,
-    [Awesomeness] INT NOT NULL ,
-    PRIMARY KEY ([Id])
-)
-";
-
-$createTable = sqlsrv_query($conn, $createTableSQL);
-if ($createTable == false) {
-    die(print_r(sqlsrv_errors(), true));
-} else {
-    echo "Table created successfully.";
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -47,9 +30,18 @@ if ($createTable == false) {
     <title>Website</title>
 </head>
 <body>
-    <h1 id="top-header">Welcome to my awesome website<?php if (array_key_exists("name", $_POST)) {
-            echo ", " . htmlspecialchars($_POST["name"]);
-        }  ?>
+    <h1 id="top-header">
+    <?php
+        $isPost = ($_SERVER['REQUEST_METHOD'] === 'POST');
+        $info = array();
+        if (!$isPost) {
+            $info = array(
+                name => $_POST["name"],
+                email => $_POST["email"],
+                awesomeness => $_POST["awesomeness"]
+            );
+        }
+    ?>
     </h1>
     <div id="img-container">
         <img src="img/photo.jpeg">
@@ -65,13 +57,25 @@ if ($createTable == false) {
         </thead>
         <tbody>
             <?php
+            // insert into database
+            if ($isPost) {
+                $name = $info["name"];
+                $email = $info["email"];
+                $awesomeness = $info["awesomeness"];
+                $query = "INSERT INTO users (name, email, awesomeness) VALUES (" . mysql_real_escape_string("'$name', '$email', '$awesomeness'") . ")";
+                if (sqlsrv_query($conn, $query) !== false) {
+                    echo "Query succeeded";
+                } else {
+                    echo "Query unsuccessful";
+                }
+            }
             $entries = array(
                 array(
                     name => "Luke",
                     email => "alphawaves@icloud.com",
                     awesomeness => 5.0
                 )
-                );
+            );
             foreach ($entries as $entry) {
                 $name = $entry["name"];
                 $email = $entry["email"];
