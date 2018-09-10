@@ -18,8 +18,6 @@ if ($conn == false) {
     die(print_r(sqlsrv_errors(), true));
 }
 
-echo $isPost;
-
 ?>
 
 <!DOCTYPE html>
@@ -35,8 +33,9 @@ echo $isPost;
     <h1 id="top-header">
     <?php
         $isPost = ($_SERVER['REQUEST_METHOD'] === 'POST');
+        echo $isPost;
         $info = array();
-        if (!$isPost) {
+        if ($isPost) {
             $info = array(
                 name => $_POST["name"],
                 email => $_POST["email"],
