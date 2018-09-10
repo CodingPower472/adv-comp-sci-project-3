@@ -33,7 +33,6 @@ if ($conn == false) {
     <h1 id="top-header">
     <?php
         $isPost = ($_SERVER['REQUEST_METHOD'] === 'POST');
-        echo $isPost ? "Ya its post" : "Nah fam";
         $info = array();
         if ($isPost) {
             $info = array(
@@ -64,6 +63,7 @@ if ($conn == false) {
                 $email = $info["email"];
                 $awesomeness = $info["awesomeness"];
                 $query = "INSERT INTO users (name, email, awesomeness) VALUES (" . mysql_real_escape_string("'$name', '$email', '$awesomeness'") . ")";
+                echo $query;
                 echo "Query starting";
                 if (sqlsrv_query($conn, $query) !== false) {
                     echo "Query succeeded";
