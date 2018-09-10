@@ -44,9 +44,11 @@ if ($conn == false) {
 
             // insert into database
             if ($isPost) {
+                echo "Inserting into database";
                 $name = $info["name"];
                 $email = $info["email"];
                 $awesomeness = $info["awesomeness"];
+                echo "Defined variables";
                 $query = "INSERT INTO users (name, email, awesomeness) VALUES (" . mysql_real_escape_string("'$name', '$email', '$awesomeness'") . ")";
                 echo $query;
                 echo "Query starting";
