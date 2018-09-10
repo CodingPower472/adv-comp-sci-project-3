@@ -58,7 +58,6 @@ if ($conn == false) {
         <tbody>
             <?php
             // insert into database
-            echo count($entries);
             if ($isPost) {
                 $name = $info["name"];
                 $email = $info["email"];
@@ -77,6 +76,7 @@ if ($conn == false) {
                     awesomeness => 5.0
                 )
             );
+            echo count($entries);
             foreach ($entries as $entry) {
                 $name = $entry["name"];
                 $email = $entry["email"];
