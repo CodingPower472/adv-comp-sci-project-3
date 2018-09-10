@@ -63,6 +63,7 @@ if ($conn == false) {
                 $email = $info["email"];
                 $awesomeness = $info["awesomeness"];
                 $query = "INSERT INTO users (name, email, awesomeness) VALUES (" . mysql_real_escape_string("'$name', '$email', '$awesomeness'") . ")";
+                echo "Query starting";
                 if (sqlsrv_query($conn, $query) !== false) {
                     echo "Query succeeded";
                 } else {
