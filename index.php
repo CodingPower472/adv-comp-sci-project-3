@@ -18,6 +18,8 @@ if ($conn == false) {
     die(print_r(sqlsrv_errors(), true));
 }
 
+echo $isPost;
+
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +60,6 @@ if ($conn == false) {
         <tbody>
             <?php
             // insert into database
-            echo $isPost;
             if ($isPost) {
                 $name = $info["name"];
                 $email = $info["email"];
