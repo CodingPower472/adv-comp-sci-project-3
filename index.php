@@ -40,25 +40,17 @@ if ($conn == false) {
                 email => $_POST["email"],
                 awesomeness => $_POST["awesomeness"]
             );
-        }
-
-            // insert into database
-            if ($isPost) {
-                echo "Inserting into database\n";
-                $name = $info["name"];
-                $email = $info["email"];
-                $awesomeness = $info["awesomeness"];
-                echo "Defined variables\n";
-                $query = "INSERT INTO users (name, email, awesomeness) VALUES (?, ?, ?)";
-                $vars = array($name, $email, $awesomeness);
-                echo $query;
-                echo "Query starting";
-                if (sqlsrv_query($conn, $query, $vars) !== false) {
-                    echo "Query succeeded";
-                } else {
-                    echo "Query unsuccessful";
-                }
+            $name = $info["name"];
+            $email = $info["email"];
+            $awesomeness = $info["awesomeness"];
+            $query = "INSERT INTO users (name, email, awesomeness) VALUES (?, ?, ?)";
+            $vars = array($name, $email, $awesomeness);
+            if (sqlsrv_query($conn, $query, $vars) !== false) {
+                //echo "Query succeeded";
+            } else {
+                //echo "Query unsuccessful";
             }
+        }
     ?>
     </h1>
     <div id="img-container">
