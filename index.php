@@ -49,10 +49,11 @@ if ($conn == false) {
                 $email = $info["email"];
                 $awesomeness = $info["awesomeness"];
                 echo "Defined variables\n";
-                $query = "INSERT INTO users (name, email, awesomeness) VALUES (" . /* mysql_real_escape_string("'$name', '$email', '$awesomeness'") . */ ")";
+                $query = "INSERT INTO users (name, email, awesomeness) VALUES (?, ?, ?)";
+                $vars = array($name, $email, $awesomeness);
                 echo $query;
                 echo "Query starting";
-                if (sqlsrv_query($conn, $query) !== false) {
+                if (sqlsrv_query($conn, $query, $vars) !== false) {
                     echo "Query succeeded";
                 } else {
                     echo "Query unsuccessful";
