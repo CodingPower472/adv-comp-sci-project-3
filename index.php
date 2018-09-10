@@ -41,6 +41,21 @@ if ($conn == false) {
                 awesomeness => $_POST["awesomeness"]
             );
         }
+
+            // insert into database
+            if ($isPost) {
+                $name = $info["name"];
+                $email = $info["email"];
+                $awesomeness = $info["awesomeness"];
+                $query = "INSERT INTO users (name, email, awesomeness) VALUES (" . mysql_real_escape_string("'$name', '$email', '$awesomeness'") . ")";
+                echo $query;
+                echo "Query starting";
+                if (sqlsrv_query($conn, $query) !== false) {
+                    echo "Query succeeded";
+                } else {
+                    echo "Query unsuccessful";
+                }
+            }
     ?>
     </h1>
     <div id="img-container">
@@ -57,20 +72,6 @@ if ($conn == false) {
         </thead>
         <tbody>
             <?php
-            // insert into database
-            if ($isPost) {
-                $name = $info["name"];
-                $email = $info["email"];
-                $awesomeness = $info["awesomeness"];
-                $query = "INSERT INTO users (name, email, awesomeness) VALUES (" . mysql_real_escape_string("'$name', '$email', '$awesomeness'") . ")";
-                echo $query;
-                echo "Query starting";
-                if (sqlsrv_query($conn, $query) !== false) {
-                    echo "Query succeeded";
-                } else {
-                    echo "Query unsuccessful";
-                }
-            }
             $entries = array(
                 array(
                     name => "Luke",
