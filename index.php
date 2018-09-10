@@ -76,7 +76,7 @@ if ($conn == false) {
                     awesomeness => 5.0
                 )
             );
-            echo count($entries);
+            echo "Num entries: " . count($entries);
             foreach ($entries as $entry) {
                 $name = $entry["name"];
                 $email = $entry["email"];
