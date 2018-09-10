@@ -44,12 +44,12 @@ if ($conn == false) {
 
             // insert into database
             if ($isPost) {
-                echo "Inserting into database";
+                echo "Inserting into database\n";
                 $name = $info["name"];
                 $email = $info["email"];
                 $awesomeness = $info["awesomeness"];
-                echo "Defined variables";
-                $query = "INSERT INTO users (name, email, awesomeness) VALUES (" . mysql_real_escape_string("'$name', '$email', '$awesomeness'") . ")";
+                echo "Defined variables\n";
+                $query = "INSERT INTO users (name, email, awesomeness) VALUES (" . /* mysql_real_escape_string("'$name', '$email', '$awesomeness'") . */ ")";
                 echo $query;
                 echo "Query starting";
                 if (sqlsrv_query($conn, $query) !== false) {
