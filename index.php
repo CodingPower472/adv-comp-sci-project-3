@@ -77,7 +77,7 @@ if ($conn == false) {
                 )
             );
             $query = "SELECT * FROM users";
-            $result = sqlsrv_query($query);
+            $result = sqlsrv_query($conn, $query);
             $entries = sqlsrv_fetch_array($result);
             foreach ($entries as $entry) {
                 $name = $entry["name"];
@@ -92,7 +92,6 @@ if ($conn == false) {
             ?>
         </tbody>
     </table>
-    <h3><?php echo $entries ?></h3>
     <form action="/" method="POST">
         <label>
             Name: 
