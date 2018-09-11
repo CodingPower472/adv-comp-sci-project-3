@@ -47,12 +47,13 @@ if ($conn == false) {
             $query = "INSERT INTO users (name, email, awesomeness) VALUES (?, ?, ?)";
             $vars = array($name, $email, $awesomeness);
             if (sqlsrv_query($conn, $query, $vars) !== false) {
-                //echo "Query succeeded";
+                echo "Query succeeded";
             } else {
-                //echo "Query unsuccessful";
+                echo "Query unsuccessful";
             }
         }
-        echo "Welcome" . $isPost ? " back, $name" : "";
+        echo "Welcome";
+        echo $isPost ? " back, $name" : "";
     ?>
     </h1>
     <div id="img-container">
