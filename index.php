@@ -34,6 +34,7 @@ if ($conn == false) {
     <?php
         $isPost = ($_SERVER['REQUEST_METHOD'] === 'POST');
         $info = array();
+        $name = "";
         if ($isPost) {
             $info = array(
                 name => $_POST["name"],
@@ -51,6 +52,7 @@ if ($conn == false) {
                 //echo "Query unsuccessful";
             }
         }
+        echo "Welcome" . $isPost ? " back, $name" : "";
     ?>
     </h1>
     <div id="img-container">
