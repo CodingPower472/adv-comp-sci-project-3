@@ -84,9 +84,9 @@ if ($conn == false) {
                 $email = $entry["email"];
                 $awesomeness = $entry["awesomeness"];
                 echo "<tr>";
-                echo "<th>$name</th>";
-                echo "<th>$email</th>";
-                echo "<th>$awesomeness</th>";
+                echo "<th>n$name</th>";
+                echo "<th>e$email</th>";
+                echo "<th>a$awesomeness</th>";
                 echo "</tr>";
             }
             ?>
