@@ -76,6 +76,9 @@ if ($conn == false) {
                     awesomeness => 5.0
                 )
             );
+            $query = "SELECT * FROM users";
+            $result = sqlsrv_query($query);
+            $entries = sqlsrv_fetch_array($entries);
             foreach ($entries as $entry) {
                 $name = $entry["name"];
                 $email = $entry["email"];
